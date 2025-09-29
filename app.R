@@ -758,7 +758,7 @@ server <- function(input, output, session) {
     n_per_group <- input$n_per_group_3way
     treatment <- rep(c("Drug", "Placebo"), each = n_per_group * 3 * 2)
     bmi_category <- rep(rep(c("Normal", "Overweight", "Obese"), each = n_per_group * 2), 2)
-    activity <- rep(rep(c("Active", "Sedentary"), each = n_per_group), 2 * 3)
+    activity <- rep(rep(c("Active", "Inactive"), each = n_per_group), 2 * 3)
     
     # Effects (same as your original simulation)
     base_effect <- 0.5
@@ -1598,7 +1598,7 @@ server <- function(input, output, session) {
             )
           ),
           tags$li("Interpreting splits: every split represents an interaction; the model chooses the split that best separates groups at that stage."),
-          tags$li("Color coding (e.g., blue vs. green) simply differentiates branches and has no statistical meaning."),
+          tags$li("Colour coding reflects the predicted mean response for each terminal node. The green–blue gradient corresponds to the range of predicted values, with different colours indicating different levels of the outcome variable."),
           tags$li("Compare leaf-node means to see which pathways (combinations of factors) produce the greatest or least effects.")
         )
       )
